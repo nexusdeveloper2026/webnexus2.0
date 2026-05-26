@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { motion } from "motion/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -39,6 +40,17 @@ const services = [
   },
 ];
 
+const cardHover = {
+  y: -8,
+  boxShadow: "0 12px 45px -8px rgba(62, 181, 172, 0.3)",
+  transition: { type: "spring" as const, stiffness: 300, damping: 20 },
+};
+
+const iconHover = {
+  scale: 1.15,
+  transition: { type: "spring" as const, stiffness: 300, damping: 15 },
+};
+
 export default function Services() {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -51,8 +63,11 @@ export default function Services() {
   }, []);
 
   return (
-    <section id="servicios" ref={ref} className="relative py-20 sm:py-28" style={{ zIndex: 1 }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="servicios" ref={ref} className="relative py-20 sm:py-28 bg-gradient-to-b from-white via-primary/[0.02] to-white" style={{ zIndex: 1 }}>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/3 -right-20 w-72 h-72 rounded-full bg-accent/[0.03] blur-3xl" />
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-14">
           <span className="text-primary font-semibold text-sm tracking-widest uppercase">Servicios</span>
           <h2 className="services-title text-3xl sm:text-4xl font-bold text-text mt-3 mb-4">
@@ -65,13 +80,13 @@ export default function Services() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s) => (
-            <div key={s.title} className="service-card bg-white rounded-2xl p-6 shadow-sm border border-border/50 hover:shadow-md hover:border-primary/20 transition-all group">
-              <div className="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors">
-                <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={s.icon} /></svg>
-              </div>
-              <h3 className="font-bold text-text mb-2">{s.title}</h3>
-              <p className="text-text-secondary text-sm leading-relaxed">{s.desc}</p>
-            </div>
+            <motion.div key={s.title} className="service-card bg-secondary rounded-2xl p-6 shadow-sm" whileHover={cardHover}>
+              <motion.div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mb-4" whileHover={iconHover}>
+                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={s.icon} /></svg>
+              </motion.div>
+              <h3 className="font-bold text-white mb-2">{s.title}</h3>
+              <p className="text-white/80 text-sm leading-relaxed">{s.desc}</p>
+            </motion.div>
           ))}
         </div>
       </div>

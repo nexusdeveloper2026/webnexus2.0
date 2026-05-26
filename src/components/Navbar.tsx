@@ -23,32 +23,39 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-transparent"
+        }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 sm:h-20">
-        <a href="#inicio" className="flex items-center gap-2">
-          <img src="/logo.svg" alt="NEXUS Technology" className="w-8 h-8" />
-          <span className="font-bold text-lg text-primary">NEXUS</span>
-        </a>
-
-        <div className="hidden md:flex items-center gap-8">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-sm font-medium text-text-secondary hover:text-primary transition-colors"
-            >
-              {l.label}
-            </a>
-          ))}
-          <a
-            href="#contacto"
-            className="bg-primary text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-primary/90 transition-colors"
-          >
-            Solicitar Demo
+        <div className="flex items-center gap-10">
+          <a href="#inicio" className="flex items-center shrink-0">
+            <img src="/logo.png" alt="NEXUS Technology Logo" className="h-8 md:h-10 w-auto object-contain" />
           </a>
+
+          <div className="hidden md:flex items-center gap-6">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-sm font-medium text-text-secondary hover:text-primary transition-colors"
+              >
+                {l.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div className="hidden md:flex items-center">
+          <div className="relative">
+            {/* Anillo de pulso */}
+            <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary to-secondary opacity-60 animate-ping" />
+            <a
+              href="#contacto"
+              className="relative bg-gradient-to-r from-primary to-secondary text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:opacity-90 transition-all shadow-md shadow-primary/20"
+            >
+              Solicitar Soporte
+            </a>
+          </div>
         </div>
 
         <button
@@ -77,7 +84,7 @@ export default function Navbar() {
           <a
             href="#contacto"
             onClick={() => setMobileOpen(false)}
-            className="bg-primary text-white text-sm font-semibold px-5 py-2.5 rounded-lg text-center"
+            className="bg-gradient-to-r from-primary to-secondary text-white text-sm font-semibold px-5 py-2.5 rounded-lg text-center"
           >
             Solicitar Demo
           </a>

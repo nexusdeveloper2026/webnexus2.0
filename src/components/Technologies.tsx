@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { motion } from "motion/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -17,6 +18,12 @@ const techs = [
   { name: "Redis", desc: "Caché y tiempo real" },
 ];
 
+const cardHover = {
+  y: -8,
+  boxShadow: "0 12px 45px -8px rgba(62, 181, 172, 0.3)",
+  transition: { type: "spring" as const, stiffness: 300, damping: 20 },
+};
+
 export default function Technologies() {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -29,8 +36,11 @@ export default function Technologies() {
   }, []);
 
   return (
-    <section id="tecnologias" ref={ref} className="relative py-20 sm:py-28 bg-surface" style={{ zIndex: 1 }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="tecnologias" ref={ref} className="relative py-20 sm:py-28 bg-gradient-to-b from-primary/[0.05] via-primary/[0.02] to-surface" style={{ zIndex: 1 }}>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-10 left-1/4 w-64 h-64 rounded-full bg-secondary/[0.05] blur-3xl" />
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-14">
           <span className="text-primary font-semibold text-sm tracking-widest uppercase">Tecnologías</span>
           <h2 className="tech-title text-3xl sm:text-4xl font-bold text-text mt-3 mb-4">
@@ -43,13 +53,13 @@ export default function Technologies() {
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           {techs.map((t) => (
-            <div key={t.name} className="tech-item bg-white rounded-xl p-5 text-center shadow-sm border border-border/50 hover:border-primary/20 hover:shadow-md transition-all">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mx-auto mb-3">
-                <span className="text-primary font-bold text-sm">{t.name[0]}</span>
+            <motion.div key={t.name} className="tech-item bg-secondary rounded-xl p-5 text-center shadow-sm" whileHover={cardHover}>
+              <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center mx-auto mb-3">
+                <span className="text-white font-bold text-sm">{t.name[0]}</span>
               </div>
-              <h3 className="font-bold text-text text-sm">{t.name}</h3>
-              <p className="text-text-secondary text-xs mt-1">{t.desc}</p>
-            </div>
+              <h3 className="font-bold text-white text-sm">{t.name}</h3>
+              <p className="text-white/70 text-xs mt-1">{t.desc}</p>
+            </motion.div>
           ))}
         </div>
       </div>

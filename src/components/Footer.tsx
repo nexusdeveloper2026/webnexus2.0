@@ -4,12 +4,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-white/20 to-white/5 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">N</span>
-              </div>
-              <span className="font-bold text-lg text-white">NEXUS</span>
-            </div>
+            <a href="#inicio" className="block mb-6">
+              <img src="/logo.png" alt="NEXUS Technology Logo" className="h-14 md:h-16 w-auto object-contain" />
+            </a>
             <p className="text-white/60 text-sm leading-relaxed">
               Transformando la gestión empresarial venezolana con inteligencia artificial nativa.
             </p>
