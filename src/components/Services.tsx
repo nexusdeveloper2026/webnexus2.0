@@ -9,34 +9,34 @@ gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
-    title: "Gestión Contable",
-    desc: "Automatiza tu contabilidad con registros inteligentes, balances en tiempo real y reportes financieros automáticos.",
-    icon: "M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z",
+    title: "Desarrollo de Software",
+    desc: "Diseño de aplicaciones a la medida, integración de sistemas y fábrica de software.",
+    icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4",
   },
   {
-    title: "IA Predictiva",
-    desc: "Anticipa tendencias, detecta anomalías y toma decisiones informadas con modelos de IA entrenados para tu negocio.",
-    icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
+    title: "Desarrollo de APP Móviles",
+    desc: "Creación de aplicaciones móviles nativas e híbridas para iOS y Android con experiencias de usuario intuitivas y alto rendimiento.",
+    icon: "M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z",
   },
   {
-    title: "Facturación Electrónica",
-    desc: "Emite facturas electrónicas compliant con SENIAT, controla tu inventario y sincroniza con tu contabilidad al instante.",
-    icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+    title: "Infraestructura y Negocio",
+    desc: "Soluciones de negocio (ERP, CRM, BI), migración a la nube y mesas de ayuda (Service Desk).",
+    icon: "M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z",
   },
   {
-    title: "Multi Empresa",
-    desc: "Administra múltiples empresas desde un solo panel. Consolidación de estados financieros y reportes globales.",
-    icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
+    title: "Seguridad",
+    desc: "Servicios de ciberseguridad, planes de continuidad (DRP) e instalación de sistemas de seguridad electrónica y videovigilancia.",
+    icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",
   },
   {
-    title: "CRM Inteligente",
-    desc: "Gestiona tus clientes, automatiza seguimientos y descubre oportunidades de venta con análisis predictivo de IA.",
-    icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z",
-  },
-  {
-    title: "Soporte & Consultoría",
-    desc: "Acompañamiento dedicado con expertos en implementación, migración de datos y capacitación de tu equipo.",
+    title: "Asesoría y Acompañamiento Tecnológico",
+    desc: "Soporte técnico especializado, consultoría en transformación digital y acompañamiento continuo para garantizar la adopción exitosa de tecnología en tu empresa.",
     icon: "M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z",
+  },
+  {
+    title: "Consultoría SGI",
+    desc: "Diseño, digitalización y auditoría de sistemas de gestión normativos.",
+    icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
   },
 ];
 
@@ -69,23 +69,26 @@ export default function Services() {
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-14">
-          <span className="text-primary font-semibold text-sm tracking-widest uppercase">Servicios</span>
+          <span className="text-primary font-semibold text-2xl sm:text-3xl tracking-widest uppercase">Servicios</span>
           <h2 className="services-title text-3xl sm:text-4xl font-bold text-text mt-3 mb-4">
             Todo lo que tu empresa necesita
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
-            Un ecosistema completo de soluciones administrativas potenciadas con inteligencia artificial.
+            Un ecosistema completo de soluciones tecnologicas potenciadas con nuestra inteligencia artificial NEX-IA.
           </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s) => (
-            <motion.div key={s.title} className="service-card bg-secondary rounded-2xl p-6 shadow-sm" whileHover={cardHover}>
-              <motion.div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mb-4" whileHover={iconHover}>
-                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={s.icon} /></svg>
-              </motion.div>
-              <h3 className="font-bold text-white mb-2">{s.title}</h3>
-              <p className="text-white/80 text-sm leading-relaxed">{s.desc}</p>
+            <motion.div key={s.title} className="service-card bg-gradient-to-br from-[#1D3D8E] to-secondary rounded-2xl p-8 shadow-sm relative overflow-hidden group" whileHover={cardHover}>
+              <div className="absolute inset-0 bg-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative z-10">
+                <motion.div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mb-4" whileHover={iconHover}>
+                  <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={s.icon} /></svg>
+                </motion.div>
+                <h3 className="font-bold text-white mb-2">{s.title}</h3>
+                <p className="text-white/80 text-sm leading-relaxed">{s.desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>

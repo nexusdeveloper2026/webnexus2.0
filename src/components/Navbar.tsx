@@ -50,7 +50,9 @@ export default function Navbar() {
             {/* Anillo de pulso */}
             <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary to-secondary opacity-60 animate-ping" />
             <a
-              href="#contacto"
+              href="https://wa.me/584176543210?text=Hola!%20Necesito%20soporte%20t%C3%A9cnico."
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative bg-gradient-to-r from-primary to-secondary text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:opacity-90 transition-all shadow-md shadow-primary/20"
             >
               Solicitar Soporte
@@ -82,11 +84,13 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#contacto"
+            href="https://wa.me/584176543210?text=Hola!%20Necesito%20soporte%20t%C3%A9cnico."
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setMobileOpen(false)}
             className="bg-gradient-to-r from-primary to-secondary text-white text-sm font-semibold px-5 py-2.5 rounded-lg text-center"
           >
-            Solicitar Demo
+            Solicitar Soporte
           </a>
         </div>
       )}

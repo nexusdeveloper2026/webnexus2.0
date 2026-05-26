@@ -9,9 +9,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const values = [
   { title: "Integridad y Confidencialidad", desc: "Al gestionar la ciberseguridad, los datos y el control de acceso físico de nuestros clientes, actuamos bajo los más estrictos principios éticos. La información de nuestros clientes es invulnerable y protegida. " },
-  { title: "Compromiso", desc: "Nos dedicamos al éxito de nuestros clientes con soporte y acompañamiento constante." },
-  { title: "Excelencia", desc: "Cada línea de código está pensada para ofrecer la mejor experiencia y rendimiento." },
-  { title: "Visión Local", desc: "Entendemos el mercado venezolano y creamos soluciones que se adaptan a su realidad." },
+  { title: "Enfoque Basado en Procesos y Calidad", desc: "No dejamos nada al azar ni trabajamo en la improvisación. Diseñamos, medimos, controlamos y optimizamos cada servicio aplicando el ciclo de mejora continua." },
+  { title: "Adaptabilidad e Innovación", desc: "Nos adaptamos rápidamente a los cambios del entorno tecnológico y a los desafíos. Transformamos los problemas de infraestructura, conectividad o seguridad en soluciones estables y robustas." },
+  { title: "Compromiso con la Excelencia", desc: "La calidad y la seguridad de la información no son servicios que solo vendemos hacia afuera; son la regla de oro con la que operamos." },
+  { title: "Trabajo en equipo", desc: " Entendemos que la seguridad integral y la seguridad lógica deben trabajar unidas. Rompemos los silos para ofrecer soluciones integradas donde todo el sistema de soporte colabora entre sí." },
 ];
 
 const cardHover = {
@@ -45,13 +46,19 @@ export default function About() {
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-16">
-          <span className="text-primary font-semibold text-sm tracking-widest uppercase">Nosotros</span>
+          <span className="text-primary font-semibold text-2xl sm:text-3xl tracking-widest uppercase">Nosotros</span>
           <h2 className="about-title text-3xl sm:text-4xl font-bold text-text mt-3 mb-4">
             Transformando la gestión empresarial en Venezuela
           </h2>
-          <p className="text-text-secondary max-w-2xl mx-auto">
-            En Nexus Technology creemos que la tecnología debe estar al servicio de las personas.
-            Por eso creamos el primer ERP con inteligencia artificial nativa diseñado para el mercado venezolano.
+           <p className="text-text-secondary max-w-4xl mx-auto text-justify text-sm sm:text-base leading-relaxed mb-4">
+             <strong>Nexus Technology</strong> es fundada en el año 2026 como una respuesta transformadora e innovadora a las demandas del mercado corporativo actual, donde la tecnología, la información y la seguridad física ya no pueden operar como islas separadas.
+           </p>
+          <p className="text-text-secondary max-w-4xl mx-auto text-justify text-sm sm:text-base leading-relaxed">
+            La empresa nace de la convergencia de profesionales de la ingeniería, desarrollo de software y seguridad integral, quienes identificaron que las organizaciones modernas pierden eficiencia al contratar múltiples proveedores para su software, su soporte en la nube y su seguridad perimetral.
+          </p>
+          <div className="h-4" />
+          <p className="text-text-secondary max-w-4xl mx-auto text-justify text-sm sm:text-base leading-relaxed">
+            A diferencia del modelo tradicional de crecimiento empírico, <strong>Nexus Technology</strong> marca un hito desde su constitución al adoptar el enfoque de &ldquo;Calidad y Seguridad desde el Diseño&rdquo;. Desde sus primeras operaciones, la Alta Dirección toma la decisión estratégica de estructurar toda la empresa bajo los requisitos de un Sistema de Gestión Integrado (SGI) basado en las normas internacionales <strong>ISO 9001</strong> e <strong>ISO 27001</strong>. Esto significa que cada proceso de nuestra cadena de valor nace documentado, estandarizado y protegido bajo estrictos controles de confidencialidad y mejora continua. Con su portafolio de servicios unificado, <strong>Nexus Technology</strong> inicia operaciones en el mercado con un equipo técnico de primer nivel y una infraestructura adaptada a los desafíos locales, garantizando la adaptabilidad y continuidad del negocio ante contingencias.
           </p>
         </div>
 
@@ -67,7 +74,7 @@ export default function About() {
               </motion.div>
               <h3 className="text-lg font-bold text-white mb-2">Objetivo</h3>
               <p className="text-white/80 text-sm leading-relaxed">
-                Consolidar a Nexus Technology como el proveedor integral de referencia en soluciones tecnológicas y de seguridad, logrando la certificación y el mantenimiento de un Sistema de Gestión Integrado bajo las normas ISO 9001 e ISO 27001, para garantizar la máxima confiabilidad en el desarrollo de software, la adaptabilidad en la infraestructura y ciberseguridad, y la eficacia operativa en la instalación de sistemas de seguridad integral, asegurando la continuidad del negocio de nuestros clientes y la sostenibilidad financiera de la organización.
+                Consolidar a <strong>Nexus Technology</strong> como el proveedor integral de referencia en soluciones tecnológicas y de seguridad, logrando la certificación y el mantenimiento de un Sistema de Gestión Integrado bajo las normas <strong>ISO 9001</strong> e <strong>ISO 27001</strong>, para garantizar la máxima confiabilidad en el desarrollo de software, la adaptabilidad en la infraestructura y ciberseguridad, y la eficacia operativa en la instalación de sistemas de seguridad integral, asegurando la continuidad del negocio de nuestros clientes y la sostenibilidad financiera de la organización.
               </p>
             </div>
           </motion.div>
@@ -83,7 +90,7 @@ export default function About() {
               </motion.div>
               <h3 className="text-lg font-bold text-white mb-2">Misión</h3>
               <p className="text-white/80 text-sm leading-relaxed">
-                Nexus Technology impulsa la transformación, continuidad y seguridad de nuestros clientes mediante la entrega de soluciones integrales de base tecnológica, desarrollo de software y sistemas de seguridad física y digital. 
+                <strong>Nexus Technology</strong> impulsa la transformación, continuidad y seguridad de nuestros clientes mediante la entrega de soluciones integrales de base tecnológica, desarrollo de software y sistemas de seguridad física y digital. 
                 Nos comprometemos a diseñar e implementar procesos eficientes y seguros, garantizando la adaptabilidad operativa y el crecimiento sostenible de sus negocios.
               </p>
             </div>
@@ -100,7 +107,7 @@ export default function About() {
               </motion.div>
               <h3 className="text-lg font-bold text-white mb-2">Visión</h3>
               <p className="text-white/80 text-sm leading-relaxed">
-                En Nexus Technology queremos ser reconocidos como el aliado estratégico líder en la integración de tecnología, sistemas de seguridad integral, ciberseguridad y sistemas de gestión. 
+                En <strong>Nexus Technology</strong> queremos ser reconocidos como el aliado estratégico líder en la integración de tecnología, sistemas de seguridad integral, ciberseguridad y sistemas de gestión. 
                 Nos proyectamos como una organización modelo en excelencia operativa, capaz de anticipar las demandas del mercado tecnológico y de proteger el entorno físico y digital de las empresas con los más altos estándares de calidad y seguridad.
               </p>
             </div>
@@ -108,12 +115,12 @@ export default function About() {
         </div>
 
         <div>
-          <h3 className="text-center text-lg font-bold text-text mb-8">Nuestros Valores</h3>
-          <div className="values-grid grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <h3 className="text-center text-2xl sm:text-3xl font-bold text-text mb-8">Nuestros Valores</h3>
+          <div className="values-grid flex flex-wrap justify-center gap-4">
             {values.map((v) => (
               <motion.div
                 key={v.title}
-                className="value-card bg-secondary/10 rounded-xl p-6 shadow-sm border border-secondary/20 text-center"
+                className="value-card bg-secondary/10 rounded-xl p-6 shadow-sm border border-secondary/20 text-center w-72"
                 whileHover={{ y: -6, boxShadow: "0 8px 30px -6px rgba(62, 181, 172, 0.2)", borderColor: "rgba(62, 181, 172, 0.4)", transition: { type: "spring" as const, stiffness: 300, damping: 20 } }}
               >
                 <h4 className="font-bold text-secondary mb-2">{v.title}</h4>
