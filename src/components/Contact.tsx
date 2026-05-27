@@ -22,7 +22,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <section id="contacto" ref={ref} className="relative py-20 sm:py-28 bg-gradient-to-b from-primary/[0.05] via-primary/[0.02] to-white" style={{ zIndex: 1 }}>
+    <section id="contacto" ref={ref} className="relative py-20 sm:py-28 bg-gradient-to-b from-primary/[0.05] via-primary/[0.02] to-surface" style={{ zIndex: 1 }}>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute bottom-1/3 -left-20 w-80 h-80 rounded-full bg-secondary/[0.04] blur-3xl" />
       </div>

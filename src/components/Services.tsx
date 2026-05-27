@@ -63,7 +63,7 @@ export default function Services() {
   }, []);
 
   return (
-    <section id="servicios" ref={ref} className="relative py-20 sm:py-28 bg-gradient-to-b from-white via-primary/[0.02] to-white" style={{ zIndex: 1 }}>
+    <section id="servicios" ref={ref} className="relative py-20 sm:py-28 bg-gradient-to-b from-surface via-primary/[0.02] to-surface" style={{ zIndex: 1 }}>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/3 -right-20 w-72 h-72 rounded-full bg-accent/[0.03] blur-3xl" />
       </div>

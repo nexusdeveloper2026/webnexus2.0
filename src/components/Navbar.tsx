@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 const links = [
-  { href: "#inicio", label: "Inicio" },
+  { href: "/", label: "Inicio" },
   { href: "#nosotros", label: "Nosotros" },
   { href: "#servicios", label: "Servicios" },
   { href: "#tecnologias", label: "Tecnologías" },
@@ -27,25 +27,25 @@ export default function Navbar() {
         }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 sm:h-20">
-        <div className="flex items-center gap-10">
-          <a href="#inicio" className="flex items-center shrink-0">
-            <img src="/logo.png" alt="NEXUS Technology Logo" className="h-8 md:h-10 w-auto object-contain" />
+        <div className="flex-1 flex items-center">
+          <a href="/" className="flex items-center shrink-0">
+            <img src="/logo.png" alt="NEXUS Technology Logo" className="h-10 md:h-14 w-auto object-contain" />
           </a>
-
-          <div className="hidden md:flex items-center gap-6">
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="text-sm font-medium text-text-secondary hover:text-primary transition-colors"
-              >
-                {l.label}
-              </a>
-            ))}
-          </div>
         </div>
 
-        <div className="hidden md:flex items-center">
+        <div className="hidden md:flex items-center gap-6 flex-1 justify-center">
+          {links.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="text-sm font-medium text-text-secondary hover:text-primary transition-colors"
+            >
+              {l.label}
+            </a>
+          ))}
+        </div>
+
+        <div className="hidden md:flex items-center flex-1 justify-end">
           <div className="relative">
             {/* Anillo de pulso */}
             <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary to-secondary opacity-60 animate-ping" />

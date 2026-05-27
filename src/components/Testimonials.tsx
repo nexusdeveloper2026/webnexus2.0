@@ -115,7 +115,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section id="testimonios" ref={sectionRef} className="relative py-20 sm:py-28 bg-gradient-to-b from-white via-accent/[0.02] to-surface" style={{ zIndex: 1 }}>
+    <section id="testimonios" ref={sectionRef} className="relative py-20 sm:py-28 bg-gradient-to-b from-surface via-accent/[0.02] to-surface" style={{ zIndex: 1 }}>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/3 w-96 h-96 rounded-full bg-primary/[0.04] blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-64 h-64 rounded-full bg-secondary/[0.03] blur-3xl" />
