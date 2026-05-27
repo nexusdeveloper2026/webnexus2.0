@@ -30,5 +30,14 @@
     "eslint-config-next": "16.2.6",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "name": "webnexus2",
+  "version": "1.0.0",
+  "scripts": { ... },
+  "dependencies": { ... },
+  "npm" : {
+    "config": {
+      "legacy-peer-deps": true
+    }
   }
 }
