@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
           <div>
-            <a href="/" className="block mb-6">
+            <a href="#inicio" className="block mb-6">
               <img src="/logo.png" alt="NEXUS Technology Logo" className="h-14 md:h-16 w-auto object-contain" />
             </a>
             <p className="text-white/60 text-sm leading-relaxed">
@@ -17,7 +17,7 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {["Inicio", "Nosotros", "Servicios", "Tecnologías", "Testimonios", "Contacto"].map((l) => (
                 <li key={l}>
-                  <a href={l === "Inicio" ? "/" : `#${l.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} className="text-white/60 text-sm hover:text-white transition-colors">
+                  <a href={l === "Inicio" ? "#inicio" : `#${l.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} className="text-white/60 text-sm hover:text-white transition-colors">
                     {l}
                   </a>
                 </li>

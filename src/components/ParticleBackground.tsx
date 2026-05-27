@@ -3,9 +3,9 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
-const COUNT = 55;
-const CONNECT_DIST = 0.35;
-const LINE_OPACITY = 0.25;
+const COUNT = 80;
+const CONNECT_DIST = 0.4;
+const LINE_OPACITY = 0.2;
 
 export default function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -39,22 +39,20 @@ export default function ParticleBackground() {
     const positions = new Float32Array(COUNT * 3);
     const sizes = new Float32Array(COUNT);
     const velocities = new Float32Array(COUNT * 2);
-    const angles = new Float32Array(COUNT);
-    const drifts = new Float32Array(COUNT);
+    const phases = new Float32Array(COUNT);
 
     for (let i = 0; i < COUNT; i++) {
       const i2 = i * 2;
       const i3 = i * 3;
-      const angle = Math.random() * Math.PI * 2;
-      const radius = 0.3 + Math.random() * 0.7;
-      positions[i3] = Math.cos(angle) * radius;
-      positions[i3 + 1] = Math.sin(angle) * radius;
+      positions[i3] = (Math.random() - 0.5) * 2.4;
+      positions[i3 + 1] = (Math.random() - 0.5) * 2.4;
       positions[i3 + 2] = 0;
-      sizes[i] = 0.008 + Math.random() * 0.02;
-      velocities[i2] = (Math.random() - 0.5) * 0.002;
-      velocities[i2 + 1] = (Math.random() - 0.5) * 0.002;
-      angles[i] = Math.random() * Math.PI * 2;
-      drifts[i] = 0.0003 + Math.random() * 0.0007;
+      sizes[i] = 0.008 + Math.random() * 0.025;
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 0.001 + Math.random() * 0.003;
+      velocities[i2] = Math.cos(angle) * speed;
+      velocities[i2 + 1] = Math.sin(angle) * speed;
+      phases[i] = Math.random() * Math.PI * 2;
     }
 
     const pointsGeo = new THREE.BufferGeometry();
@@ -66,7 +64,7 @@ export default function ParticleBackground() {
       blending: THREE.AdditiveBlending,
       depthWrite: false,
       transparent: true,
-      opacity: 0.45,
+      opacity: 0.5,
       color: new THREE.Color(0.45, 0.6, 1),
       size: 0.025,
       sizeAttenuation: false,
@@ -101,31 +99,38 @@ export default function ParticleBackground() {
     window.addEventListener("mousemove", handleMouse);
     window.addEventListener("resize", handleResize);
 
-    const clock = new THREE.Clock();
+    let time = 0;
 
     const animate = () => {
       const dt = Math.min(clock.getDelta(), 0.05);
+      time += dt;
       const mx = mouseRef.current.x;
       const my = mouseRef.current.y;
       const posAttr = pointsGeo.attributes.position as THREE.BufferAttribute;
       const pos = posAttr.array as Float32Array;
+      const halfW = 1.2;
+      const halfH = 1.2;
 
       for (let i = 0; i < COUNT; i++) {
         const i2 = i * 2;
         const i3 = i * 3;
-        angles[i] += drifts[i];
-        pos[i3] += velocities[i2] * dt * 30 + Math.sin(angles[i]) * 0.0003;
-        pos[i3 + 1] += velocities[i2 + 1] * dt * 30 + Math.cos(angles[i]) * 0.0003;
 
-        const mxOff = mx * 0.02;
-        const myOff = my * 0.02;
-        pos[i3] += (mxOff - pos[i3]) * 0.0003;
-        pos[i3 + 1] += (myOff - pos[i3 + 1]) * 0.0003;
+        pos[i3] += velocities[i2] * dt * 60 + Math.sin(time * 0.5 + phases[i]) * 0.0004;
+        pos[i3 + 1] += velocities[i2 + 1] * dt * 60 + Math.cos(time * 0.5 + phases[i] * 1.3) * 0.0004;
 
-        if (pos[i3] > 1.3) velocities[i2] -= 0.0001;
-        if (pos[i3] < -1.3) velocities[i2] += 0.0001;
-        if (pos[i3 + 1] > 1.3) velocities[i2 + 1] -= 0.0001;
-        if (pos[i3 + 1] < -1.3) velocities[i2 + 1] += 0.0001;
+        const dx = mx - pos[i3];
+        const dy = my - pos[i3 + 1];
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 1.5) {
+          const force = (1.5 - dist) / 1.5 * 0.004;
+          pos[i3] += dx * force;
+          pos[i3 + 1] += dy * force;
+        }
+
+        if (pos[i3] > halfW) velocities[i2] -= 0.0002;
+        if (pos[i3] < -halfW) velocities[i2] += 0.0002;
+        if (pos[i3 + 1] > halfH) velocities[i2 + 1] -= 0.0002;
+        if (pos[i3 + 1] < -halfH) velocities[i2 + 1] += 0.0002;
       }
       posAttr.needsUpdate = true;
 
@@ -158,6 +163,7 @@ export default function ParticleBackground() {
       requestAnimationFrame(animate);
     };
 
+    const clock = new THREE.Clock();
     const raf = requestAnimationFrame(animate);
 
     return () => {

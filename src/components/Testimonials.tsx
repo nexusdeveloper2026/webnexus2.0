@@ -149,7 +149,7 @@ export default function Testimonials() {
             {duplicated.map((t, i) => (
               <motion.div
                 key={`${t.name}-${i}`}
-                className="flex-shrink-0 w-[360px] bg-gradient-to-br from-[#1D3D8E] to-secondary rounded-xl p-6 shadow-sm relative overflow-hidden group"
+                className="flex-shrink-0 w-[85vw] max-w-[360px] bg-gradient-to-br from-[#1D3D8E] to-secondary rounded-xl p-6 shadow-sm relative overflow-hidden group"
                 whileHover={cardHover}
               >
                 <div className="absolute inset-0 bg-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

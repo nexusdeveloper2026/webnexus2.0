@@ -11,7 +11,10 @@ export default function VideoPopup() {
   const fadeOut = useCallback(() => {
     if (closing) return;
     setClosing(true);
-    setTimeout(() => setVisible(false), 350);
+    setTimeout(() => {
+      setVisible(false);
+      window.dispatchEvent(new CustomEvent("video-popup-closed"));
+    }, 350);
   }, [closing]);
 
   const handleInteraction = useCallback(() => {
@@ -42,7 +45,7 @@ export default function VideoPopup() {
       }`}
       onClick={handleInteraction}
     >
-      <div className={`relative w-full max-w-3xl bg-black rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 ${
+      <div className={`relative w-full max-w-3xl bg-black rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 mx-2 sm:mx-0 ${
         closing ? "scale-95 opacity-0" : "scale-100 opacity-100"
       }`}>
         <button
@@ -72,7 +75,7 @@ export default function VideoPopup() {
           {!unmuted && (
             <div className="absolute bottom-16 left-1/2 -translate-x-1/2 pointer-events-none animate-pulse">
               <span className="text-white/80 text-xs bg-black/60 px-3 py-1.5 rounded-full backdrop-blur-sm whitespace-nowrap">
-                Haz clic para activar el sonido 🔊
+                Haz clic para activar el sonido
               </span>
             </div>
           )}

@@ -60,7 +60,7 @@ export default function Contact() {
                 </svg>
                 Escríbenos a WhatsApp
               </a>
-              <p className="text-white/50 text-xs text-center mt-4">Disponibles de Lun a Sab, respondemos en minutos.</p>
+              <p className="text-white/50 text-xs text-center mt-4">Disponibles de Lunes a Sábados en horario extendido, respondemos en minutos.</p>
             </div>
           </div>
 

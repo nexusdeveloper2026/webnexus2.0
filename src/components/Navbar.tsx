@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 const links = [
-  { href: "/", label: "Inicio" },
+  { href: "#inicio", label: "Inicio" },
   { href: "#nosotros", label: "Nosotros" },
   { href: "#servicios", label: "Servicios" },
   { href: "#tecnologias", label: "Tecnologías" },
@@ -28,7 +28,7 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 sm:h-20">
         <div className="flex-1 flex items-center">
-          <a href="/" className="flex items-center shrink-0">
+          <a href="#inicio" className="flex items-center shrink-0">
             <img src="/logo.png" alt="NEXUS Technology Logo" className="h-10 md:h-14 w-auto object-contain" />
           </a>
         </div>

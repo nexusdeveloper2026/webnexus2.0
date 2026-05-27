@@ -120,7 +120,7 @@ export default function About() {
             {values.map((v) => (
               <motion.div
                 key={v.title}
-                className="value-card bg-secondary/10 rounded-xl p-6 shadow-sm border border-secondary/20 text-center w-72"
+                className="value-card bg-secondary/10 rounded-xl p-6 shadow-sm border border-secondary/20 text-center w-full max-w-xs"
                 whileHover={{ y: -6, boxShadow: "0 8px 30px -6px rgba(62, 181, 172, 0.2)", borderColor: "rgba(62, 181, 172, 0.4)", transition: { type: "spring" as const, stiffness: 300, damping: 20 } }}
               >
                 <h4 className="font-bold text-secondary mb-2">{v.title}</h4>
