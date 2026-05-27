@@ -454,9 +454,12 @@ export default function NexIA() {
                         : "bg-white text-gray-800 shadow-sm border border-gray-100 rounded-bl-md"
                     }`}
                     dangerouslySetInnerHTML={{
-                      __html: msg.text
-                        .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-                        .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener" class="text-[#3EB5AC] underline font-medium hover:text-[#3C6FB5] transition-colors">$1</a>'),
+                      __html: msg.role === "bot"
+                        ? msg.text
+                            .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;")
+                            .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+                            .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener" class="text-[#3EB5AC] underline font-medium hover:text-[#3C6FB5] transition-colors">$1</a>')
+                        : msg.text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"),
                     }}
                   />
                 </div>

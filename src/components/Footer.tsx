@@ -1,11 +1,13 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="relative bg-text text-white" style={{ zIndex: 1 }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
           <div>
-            <a href="#inicio" className="block mb-6">
-              <img src="/logo.png" alt="NEXUS Technology Logo" className="h-14 md:h-16 w-auto object-contain" />
+            <a href="#inicio" className="block relative h-14 md:h-16 w-[140px] md:w-[200px] mb-6">
+              <Image src="/logo.png" alt="NEXUS Technology Logo" fill className="object-contain object-left" />
             </a>
             <p className="text-white/60 text-sm leading-relaxed">
               Soluciones tecnológicas integrales para pequeñas, medianas y grandes empresas. Innovación, desarrollo y soporte técnico de alto nivel.

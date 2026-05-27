@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import VideoPopup from "@/components/VideoPopup";
+import ErrorBoundary from "@/components/ErrorBoundary";
 import Footer from "@/components/Footer";
 
 // Lazy-loaded components (not critical for initial first paint)
@@ -35,12 +36,12 @@ export default function Home() {
       <main className="relative">
         <VideoPopup />
         <Hero />
-        <About />
-        <Services />
-        <VenezuelaMap />
-        <Technologies />
-        <Testimonials />
-        <Contact />
+        <ErrorBoundary><About /></ErrorBoundary>
+        <ErrorBoundary><Services /></ErrorBoundary>
+        <ErrorBoundary><VenezuelaMap /></ErrorBoundary>
+        <ErrorBoundary><Technologies /></ErrorBoundary>
+        <ErrorBoundary><Testimonials /></ErrorBoundary>
+        <ErrorBoundary><Contact /></ErrorBoundary>
       </main>
       <Footer />
     </>

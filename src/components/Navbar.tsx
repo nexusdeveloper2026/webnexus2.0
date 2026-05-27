@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const links = [
   { href: "#inicio", label: "Inicio" },
@@ -28,8 +29,8 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 sm:h-20">
         <div className="flex-1 flex items-center">
-          <a href="#inicio" className="flex items-center shrink-0">
-            <img src="/logo.png" alt="NEXUS Technology Logo" className="h-10 md:h-14 w-auto object-contain" />
+          <a href="#inicio" className="relative h-10 md:h-14 w-[120px] md:w-[180px] shrink-0">
+            <Image src="/logo.png" alt="NEXUS Technology Logo" fill className="object-contain object-left" priority />
           </a>
         </div>
 

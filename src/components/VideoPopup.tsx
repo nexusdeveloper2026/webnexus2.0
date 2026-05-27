@@ -28,6 +28,10 @@ export default function VideoPopup() {
     fadeOut();
   }, [fadeOut]);
 
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === "Escape") fadeOut();
+  }, [fadeOut]);
+
   useEffect(() => {
     const el = videoRef.current;
     if (el) {
@@ -35,6 +39,11 @@ export default function VideoPopup() {
       return () => el.removeEventListener("ended", handleEnded);
     }
   }, [handleEnded]);
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [handleKeyDown]);
 
   if (!visible) return null;
 
