@@ -343,6 +343,8 @@ function mensajeRedireccion(intencion: Intencion): { texto: string; url: string 
 
 const MENSAJE_INICIAL = `¡Hola! Soy **NEX-IA** 🤖\n\nTu asistente virtual de **${KB.empresa.nombre}**.\n\nPuedo ayudarte con información sobre:\n• Nuestros servicios y el ERP\n• Precios y promociones\n• Agendar una demostración\n• Soporte técnico\n\n¿En qué puedo ayudarte hoy?`;
 
+const CHAT_AVATAR = "/nexia.png";
+
 export default function NexIA() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
@@ -417,13 +419,14 @@ export default function NexIA() {
       {!open && (
         <button
           onClick={() => setOpen(true)}
-          className="fixed bottom-6 right-6 z-[180] w-16 h-16 rounded-full bg-gradient-to-br from-[#3EB5AC] to-[#3C6FB5] text-white shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center group"
+          className="fixed bottom-6 right-6 z-[180] w-16 h-16 rounded-full bg-white shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center group border border-white/70 overflow-hidden"
           aria-label="Abrir NEX-IA"
         >
-          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 2a10 10 0 0 1 10 10c0 3.5-2.3 6.5-5.5 7.6V22l-4-2.3A10.2 10.2 0 0 1 12 20a10 10 0 0 1 0-20z" />
-            <path d="M8 9h8" /><path d="M8 13h6" />
-          </svg>
+          <img
+            src={CHAT_AVATAR}
+            alt="NEX-IA"
+            className="w-full h-full object-cover"
+          />
           <span className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white animate-pulse" />
         </button>
       )}
@@ -432,7 +435,9 @@ export default function NexIA() {
         <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-[180] w-[calc(100vw-2rem)] sm:w-[380px] h-[540px] sm:h-[580px] max-h-[calc(100vh-6rem)] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-fade-in">
           <div className="bg-gradient-to-r from-[#3C6FB5] to-[#3EB5AC] text-white px-5 py-4 flex items-center justify-between shrink-0">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-lg font-bold backdrop-blur-sm">N</div>
+              <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm overflow-hidden border border-white/30 shrink-0">
+                <img src={CHAT_AVATAR} alt="NEX-IA" className="w-full h-full object-cover" />
+              </div>
               <div>
                 <p className="font-semibold text-sm leading-tight">NEX-IA</p>
                 <p className="text-[11px] text-white/70">Asistente Inteligente</p>
