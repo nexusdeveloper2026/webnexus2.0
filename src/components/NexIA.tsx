@@ -417,18 +417,21 @@ export default function NexIA() {
   return (
     <>
       {!open && (
-        <button
-          onClick={() => setOpen(true)}
-          className="fixed bottom-6 right-6 z-[180] w-16 h-16 rounded-full bg-white shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center group border border-white/70 overflow-hidden"
-          aria-label="Abrir NEX-IA"
-        >
-          <img
-            src={CHAT_AVATAR}
-            alt="NEX-IA"
-            className="w-full h-full object-cover"
-          />
-          <span className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white animate-pulse" />
-        </button>
+        <div className="fixed bottom-20 right-6 z-[180] flex flex-col items-end gap-2 pointer-events-none">
+          <span className="rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-[#1f2937] shadow-lg border border-emerald-100">Hey! Aquí estoy para ayudarte.</span>
+          <button
+            onClick={() => setOpen(true)}
+            className="pointer-events-auto relative w-16 h-16 rounded-full bg-white shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center group border-4 border-emerald-400 overflow-hidden"
+            aria-label="Abrir NEX-IA"
+          >
+            <img
+              src={CHAT_AVATAR}
+              alt="NEX-IA"
+              className="w-full h-full object-cover"
+            />
+            <span className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white animate-pulse" />
+          </button>
+        </div>
       )}
 
       {open && (
