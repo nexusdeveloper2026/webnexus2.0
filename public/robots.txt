@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://nexustechnology.com/sitemap.xml
+Sitemap: https://nexusgcorp.com/sitemap.xml
 
 # Permitir indexación completa a todos los crawlers importantes
 User-agent: Googlebot

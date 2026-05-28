@@ -64,7 +64,7 @@ export default function Hero() {
               width={800}
               height={1200}
               priority
-              className="absolute -right-12 xl:-right-20 top-1/2 -translate-y-1/2 h-[110vh] xl:h-[130vh] w-auto max-w-none object-contain drop-shadow-2xl transition-transform duration-500 ease-out group-hover:-translate-y-[calc(50%+20px)]"
+              className="absolute -right-4 lg:-right-12 xl:-right-20 top-1/2 -translate-y-1/2 h-[650px] lg:h-[750px] xl:h-[850px] w-auto max-w-none object-contain drop-shadow-2xl transition-transform duration-500 ease-out group-hover:-translate-y-[calc(50%+20px)]"
             />
           </div>
         </div>
@@ -168,7 +168,7 @@ export default function Hero() {
               width={800}
               height={1000}
               priority
-              className="absolute -left-16 xl:-left-24 top-1/2 -translate-y-1/2 h-[90vh] xl:h-[100vh] w-auto max-w-none object-contain drop-shadow-2xl transition-transform duration-500 ease-out group-hover:-translate-y-[calc(50%+20px)]"
+              className="absolute -left-4 lg:-left-16 xl:-left-24 top-1/2 -translate-y-1/2 h-[400px] lg:h-[500px] xl:h-[600px] w-auto max-w-none object-contain drop-shadow-2xl transition-transform duration-500 ease-out group-hover:-translate-y-[calc(50%+20px)]"
             />
           </div>
         </div>
