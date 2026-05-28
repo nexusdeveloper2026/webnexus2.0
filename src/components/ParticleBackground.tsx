@@ -49,7 +49,7 @@ export default function ParticleBackground() {
       positions[i3 + 2] = 0;
       sizes[i] = 0.008 + Math.random() * 0.025;
       const angle = Math.random() * Math.PI * 2;
-      const speed = 0.001 + Math.random() * 0.003;
+      const speed = 0.0003 + Math.random() * 0.001;
       velocities[i2] = Math.cos(angle) * speed;
       velocities[i2 + 1] = Math.sin(angle) * speed;
       phases[i] = Math.random() * Math.PI * 2;
@@ -115,14 +115,14 @@ export default function ParticleBackground() {
         const i2 = i * 2;
         const i3 = i * 3;
 
-        pos[i3] += velocities[i2] * dt * 60 + Math.sin(time * 0.5 + phases[i]) * 0.0004;
-        pos[i3 + 1] += velocities[i2 + 1] * dt * 60 + Math.cos(time * 0.5 + phases[i] * 1.3) * 0.0004;
+        pos[i3] += velocities[i2] * dt * 60 + Math.sin(time * 0.5 + phases[i]) * 0.00015;
+        pos[i3 + 1] += velocities[i2 + 1] * dt * 60 + Math.cos(time * 0.5 + phases[i] * 1.3) * 0.00015;
 
         const dx = mx - pos[i3];
         const dy = my - pos[i3 + 1];
         const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 1.5) {
-          const force = (1.5 - dist) / 1.5 * 0.004;
+        if (dist < 0.5) {
+          const force = (0.5 - dist) / 0.5 * 0.0006;
           pos[i3] += dx * force;
           pos[i3 + 1] += dy * force;
         }
